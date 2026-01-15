@@ -1,4 +1,4 @@
-package Tridy;
+package Konzole;
 
 public class Batoh {
 
