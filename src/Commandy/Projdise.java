@@ -1,8 +1,14 @@
 package Commandy;
 
-public class Projdise implements Command  {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Projdise extends Command  {
+    public Projdise(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

@@ -1,8 +1,16 @@
 package Commandy;
 
-public class Odpovez implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Odpovez extends Command {
+
+    public Odpovez(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
+
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

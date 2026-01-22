@@ -1,8 +1,14 @@
 package Commandy;
 
-public class Mluv implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Mluv extends Command {
+    public Mluv(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

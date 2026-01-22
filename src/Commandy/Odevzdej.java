@@ -1,8 +1,14 @@
 package Commandy;
 
-public class Odevzdej implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Odevzdej extends Command {
+    public Odevzdej(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

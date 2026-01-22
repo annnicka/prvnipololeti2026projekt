@@ -1,4 +1,4 @@
 package Predmety;
 
-public abstract class Predmet {
+public class Predmet {
 }

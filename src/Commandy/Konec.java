@@ -1,8 +1,15 @@
 package Commandy;
 
-public class Konec implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+
+public class Konec extends Command {
+    public Konec(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

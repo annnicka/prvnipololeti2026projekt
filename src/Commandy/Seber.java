@@ -1,8 +1,14 @@
 package Commandy;
 
-public class Seber implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Seber extends Command {
+    public Seber(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 

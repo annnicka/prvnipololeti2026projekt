@@ -1,12 +1,41 @@
 package Commandy;
 
-public class Jdi implements Command {
-    @Override
-    public String execute() {
-        return "";
+import Konzole.DataHry;
+import Konzole.Hra;
+import Konzole.Hrac;
+import Tridy.Lokace;
+
+import java.util.Scanner;
+
+public class Jdi extends Command {
+
+
+
+
+    public Jdi(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
+    /**
+     * umoznuje hraci pohybovat se a zakazuje hraci urcita mista
+     * @param hodnota
+     * @return
+     */
     @Override
+    public String execute(String hodnota) {
+        if (dataHry.obsahujeMapu(hrac.getMapId())) {
+            Lokace l = dataHry.getLokace(hrac.getMapId());
+            if (l.getVychody().get(hodnota) != null) {
+                hrac.setMapId(l.getVychody().get(hodnota));
+                return "nachazis se v " + l.getVychody().get(hodnota);
+            }
+        }
+        return null;
+    }
+
+
+
+        @Override
     public boolean exit() {
         return false;
     }

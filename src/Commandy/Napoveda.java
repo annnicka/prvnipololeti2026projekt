@@ -1,8 +1,14 @@
 package Commandy;
 
-public class Napoveda implements Command {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class Napoveda extends Command {
+    public Napoveda(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
+    }
     @Override
-    public String execute() {
+    public String execute(String hodnota) {
         return "";
     }
 
