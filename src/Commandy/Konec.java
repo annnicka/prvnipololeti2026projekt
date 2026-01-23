@@ -10,6 +10,7 @@ public class Konec extends Command {
     }
     @Override
     public String execute(String hodnota) {
+        System.out.println();
         return "";
     }
 
