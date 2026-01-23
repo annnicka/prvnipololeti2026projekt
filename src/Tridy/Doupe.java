@@ -1,6 +1,6 @@
 package Tridy;
 
-public class Doupe {
+public class Doupe extends Mistnost{
     public Doupe() {
     }
 
@@ -9,6 +9,11 @@ public class Doupe {
     }
 
     public void castHryVDoupetiDruha(){
+
+    }
+
+    @Override
+    public void akceVMistnosti(Hrac h) {
 
     }
 }
