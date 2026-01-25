@@ -1,15 +1,21 @@
 package Tridy;
 
-public class OkrajLesa extends Mistnost{
-    public OkrajLesa() {
-    }
+import Konzole.DataHry;
+import Konzole.Hrac;
 
-    public void castHryNaOkrajiLesa(){
+public class OkrajLesa extends CommandTrid{
 
+    public OkrajLesa(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

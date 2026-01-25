@@ -10,8 +10,9 @@ public class Konec extends Command {
     }
     @Override
     public String execute(String hodnota) {
-        System.out.println();
-        return "";
+        System.out.println("no dobrá tak třeba příště");
+        System.exit(0);
+        return "0";
     }
 
     @Override

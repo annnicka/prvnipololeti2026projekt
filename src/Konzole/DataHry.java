@@ -16,8 +16,8 @@ import java.util.HashMap;
  */
 public class DataHry {
     private HashMap<String, Lokace> locations;
-    private HashMap<String, Predmet>  predmety; //TODO: pridat predmety do text.json
-    private HashMap<String, Postava>  postavy; //TODO: pridat postavy do text.json
+    private HashMap<String, Predmet>  predmety;
+    private HashMap<String, Postava>  postavy;
     private Hrac hrac;
 
     /**
@@ -60,7 +60,33 @@ public class DataHry {
     }
 
 
+    public HashMap<String, Lokace> getLocations() {
+        return locations;
+    }
 
+    public void setLocations(HashMap<String, Lokace> locations) {
+        this.locations = locations;
+    }
+
+    public HashMap<String, Predmet> getPredmety() {
+        return predmety;
+    }
+
+    public void setPredmety(HashMap<String, Predmet> predmety) {
+        this.predmety = predmety;
+    }
+
+    public HashMap<String, Postava> getPostavy() {
+        return postavy;
+    }
+
+    public void setPostavy(HashMap<String, Postava> postavy) {
+        this.postavy = postavy;
+    }
+
+    public void setHrac(Hrac hrac) {
+        this.hrac = hrac;
+    }
 
     @Override
     public String toString() {

@@ -2,6 +2,7 @@ package Commandy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
+import Predmety.Predmet;
 
 public class Seber extends Command {
     public Seber(DataHry dataHry, Hrac hrac) {
@@ -9,7 +10,9 @@ public class Seber extends Command {
     }
     @Override
     public String execute(String hodnota) {
-        return "";
+        Predmet predmet = dataHry.getPredmety().get(hodnota);
+        hrac.getB().getPredmetyVBatohu().add(predmet);
+        return "do batohu jsi pridal "+ predmet;
     }
 
     @Override

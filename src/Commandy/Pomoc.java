@@ -9,7 +9,7 @@ public class Pomoc extends Command {
     }
     @Override
     public String execute(String hodnota) {
-        return "";
+        return "nenene pomoz si sam";
     }
 
     @Override

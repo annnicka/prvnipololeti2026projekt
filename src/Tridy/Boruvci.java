@@ -1,16 +1,22 @@
 package Tridy;
 
-public class Boruvci extends Mistnost{
+import Konzole.DataHry;
+import Konzole.Hrac;
 
-    public Boruvci() {
-    }
+public class Boruvci extends CommandTrid{
 
-    public void castHryVBoruvci(){
 
+    public Boruvci(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

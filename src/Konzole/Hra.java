@@ -12,7 +12,6 @@ public class Hra {
     public Hra() {
         dataHry = DataHry.nacteniDatHry("res/text.json");
         konzole = new Konzole(dataHry);
-        konzole.inicialization();
 
     }
 

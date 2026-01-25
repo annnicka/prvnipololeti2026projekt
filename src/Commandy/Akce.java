@@ -1,5 +1,8 @@
 package Commandy;
 
+import Konzole.DataHry;
+import Konzole.Hrac;
+
 public class Akce extends Command {
     protected Akce(DataHry dataHry, Hrac hrac) {
         super(dataHry, hrac);

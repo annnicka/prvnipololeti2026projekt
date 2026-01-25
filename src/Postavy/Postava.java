@@ -1,4 +1,10 @@
 package Postavy;
 
-public class Postava {
+public abstract class Postava {
+    protected String name;
+    protected String location;
+
+
+
 }
+
