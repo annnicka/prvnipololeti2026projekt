@@ -1,19 +1,21 @@
 package Tridy;
 
-public class Doupe extends Mistnost{
-    public Doupe() {
-    }
+import Konzole.DataHry;
+import Konzole.Hrac;
 
-    public void castHryVDoupetiPrvni(){
+public class Doupe extends CommandTrid{
 
-    }
-
-    public void castHryVDoupetiDruha(){
-
+    public Doupe(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

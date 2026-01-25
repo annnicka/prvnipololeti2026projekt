@@ -1,15 +1,21 @@
 package Tridy;
 
-public class Potok extends Mistnost {
-    public Potok() {
-    }
+import Konzole.DataHry;
+import Konzole.Hrac;
 
-    public void castHryUPotoka(){
+public class Potok extends CommandTrid {
 
+    public Potok(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

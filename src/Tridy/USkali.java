@@ -1,11 +1,21 @@
 package Tridy;
 
-public class USkali extends Mistnost{
-    public USkali() {
+import Konzole.DataHry;
+import Konzole.Hrac;
+
+public class USkali extends CommandTrid{
+
+    public USkali(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

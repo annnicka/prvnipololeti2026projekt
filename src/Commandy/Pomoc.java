@@ -4,6 +4,7 @@ import Konzole.DataHry;
 import Konzole.Hrac;
 
 public class Pomoc extends Command {
+    //pridam dialog
     public Pomoc(DataHry dataHry, Hrac hrac) {
         super(dataHry, hrac);
     }

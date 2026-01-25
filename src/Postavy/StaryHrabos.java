@@ -6,7 +6,7 @@ public class StaryHrabos {
     }
 
     public String dialogHS1(){
-
+        return null;
     }
     public void odstrateniZinventareS(){
 

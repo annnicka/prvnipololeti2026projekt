@@ -4,6 +4,7 @@ import Konzole.DataHry;
 import Konzole.Hrac;
 
 public class Seber extends Command {
+    // nejdriv musim udelat inventare postav a batoh
     public Seber(DataHry dataHry, Hrac hrac) {
         super(dataHry, hrac);
     }

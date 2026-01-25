@@ -1,16 +1,21 @@
 package Tridy;
 
-public class Louka extends Mistnost{
+import Konzole.DataHry;
+import Konzole.Hrac;
 
-    public Louka() {
-    }
+public class Louka extends CommandTrid{
 
-    public void castHryNaLouce(){
-
+    public Louka(DataHry dataHry, Hrac hrac) {
+        super(dataHry, hrac);
     }
 
     @Override
-    public void akceVMistnosti(Hrac h) {
+    public String akceVeTride(String hodnota) {
+        return "";
+    }
 
+    @Override
+    public boolean exit() {
+        return false;
     }
 }

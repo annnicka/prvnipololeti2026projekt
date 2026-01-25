@@ -10,7 +10,8 @@
         "south": null
       },
 
-      "items": ["pericko"]
+      "items": ["pericko"],
+      "characters": []
     },
     "Tunel": {
       "name": "Tunel",
@@ -21,7 +22,8 @@
       "north": "Doupe",
       "south": "Domov"
       },
-      "items": []
+      "items": [],
+      "characters": []
     },
     "Potok": {
       "name": "Potok",
@@ -32,7 +34,8 @@
       "north": null,
       "south": null
       },
-      "items": ["kaminek"]
+      "items": ["kaminek"],
+      "characters": []
     },
     "OkrajLesa": {
       "name": "OkrajLesa",
@@ -43,7 +46,8 @@
       "north": "Boruvci",
       "south": "Louka"
       },
-      "items": []
+      "items": [],
+      "characters": []
     },
     "Doupe": {
       "name": "Doupe",
@@ -54,7 +58,8 @@
         "north": null,
         "south": "Tunel"
       },
-      "items": []
+      "items": [],
+      "characters": ["HlavniHrabos","StaryHrabos"]
     },
     "Domov": {
       "name": "Domov",
@@ -65,7 +70,8 @@
         "north": "Tunel",
         "south": null
       },
-      "items": []
+      "items": [],
+      "characters": []
     },
     "Boruvci": {
       "name": "Boruvci",
@@ -76,7 +82,8 @@
         "north": null,
         "south": "OkrajLesa"
       },
-      "items": ["orisek"]
+      "items": ["orisek"],
+      "characters": []
     },
     "Louka": {
       "name": "Louka",
@@ -87,7 +94,39 @@
         "north": "OkrajLesa",
         "south": null
       },
-      "items": []
+      "items": [],
+      "characters": ["Hrabosice"]
+    }
+  },
+  "items": {
+    "Kaminek": {
+    "name": "Kaminek",
+    "location": "Potok",
+    "prenosnost": "prenosny"
+    },
+    "Orisek": {
+      "name": "Orisek",
+      "location": "Boruvci",
+      "prenosnost": "prenosny"
+    },
+    "Pericko": {
+      "name": "Pericko",
+      "location": "USkali",
+      "prenosnost": "prenosny"
+    }
+  },
+  "characters": {
+    "HlavniHrabos": {
+      "name": "HlavniHrabos",
+      "location": "Doupe"
+    },
+    "Hrabosice": {
+      "name": "Hrabosice",
+      "location": "Louka"
+    },
+    "StaryHrabos": {
+      "name": "StaryHrabos",
+      "location": "Doupe"
     }
   },
   "hrac": {

@@ -16,8 +16,8 @@ import java.util.HashMap;
  */
 public class DataHry {
     private HashMap<String, Lokace> locations;
-    private HashMap<String, Predmet>  predmety; //TODO: pridat predmety do text.json
-    private HashMap<String, Postava>  postavy; //TODO: pridat postavy do text.json
+    private HashMap<String, Predmet>  predmety;
+    private HashMap<String, Postava>  postavy;
     private Hrac hrac;
 
     /**
