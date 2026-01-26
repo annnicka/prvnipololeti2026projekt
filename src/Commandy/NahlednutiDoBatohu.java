@@ -1,16 +1,15 @@
-package Tridy;
+package Commandy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
 
-public class Louka extends CommandTrid{
-
-    public Louka(DataHry dataHry, Hrac hrac) {
+public class NahlednutiDoBatohu extends Command{
+    public NahlednutiDoBatohu(DataHry dataHry, Hrac hrac) {
         super(dataHry, hrac);
     }
 
     @Override
-    public String akceVeTride(String hodnota,Hrac hrac) {
+    public String execute(String hodnota) {
         return "";
     }
 

@@ -1,135 +1,1 @@
-{
-  "locations": {
-    "USkali": {
-      "name": "USkali",
-      "description": "Stojíš u Skály. Tady budeš hledat modré peříčko.",
-      "vychody": {
-        "east": null,
-        "north": null,
-        "south": null,
-        "west": "OkrajLesa"
-      },
-
-      "predmety": ["pericko"],
-      "postavy": []
-    },
-    "Tunel": {
-      "name": "Tunel",
-      "description": "Nacházíš se v tunelu, už jsi skoro doma!!!",
-      "vychody": {
-      "west": null,
-      "east": null,
-      "north": "Doupe",
-      "south": "Domov"
-      },
-      "predmety": [],
-      "postavy": []
-    },
-    "Potok": {
-      "name": "Potok",
-      "description": "Nacházíš se u potoka. Tady budeš hledat lesklý kamínek.",
-      "vychody": {
-      "west": "Louka",
-      "east": null,
-      "north": null,
-      "south": null
-      },
-      "predmety": ["kaminek"],
-      "postavy": []
-    },
-    "OkrajLesa": {
-      "name": "OkrajLesa",
-      "description": "Jsi na okraji lesa.",
-      "vychody": {
-      "west": "Doupe",
-      "east": "USkali",
-      "north": "Boruvci",
-      "south": "Louka"
-      },
-      "predmety": [],
-      "postavy": []
-    },
-    "Doupe": {
-      "name": "Doupe",
-      "description": "Jsi v doupěti, tady jsou všichni hraboši až na paní Hrabošovou.",
-      "vychody": {
-        "west": null,
-        "east": null,
-        "north": null,
-        "south": "Tunel"
-      },
-      "predmety": [],
-      "postavy": ["HlavniHrabos","StaryHrabos"]
-    },
-    "Domov": {
-      "name": "Domov",
-      "description": "Už jsi doma!!!",
-      "vychody": {
-        "west": null,
-        "east": null,
-        "north": "Tunel",
-        "south": null
-      },
-      "predmety": [],
-      "postavy": []
-    },
-    "Boruvci": {
-      "name": "Boruvci",
-      "description": "Jsi v borůvčí, tady najdeš oříšek.",
-      "vychody": {
-        "west": null,
-        "east": null,
-        "north": null,
-        "south": "OkrajLesa"
-      },
-      "predmety": ["orisek"],
-      "postavy": []
-    },
-    "Louka": {
-      "name": "Louka",
-      "description": "Jsi na louce, tady pracuje paní Hrabošová.",
-      "vychody": {
-        "west": null,
-        "east": "Potok",
-        "north": "OkrajLesa",
-        "south": null
-      },
-      "predmety": [],
-      "postavy": ["Hrabosice"]
-    }
-  },
-  "items": {
-    "Kaminek": {
-    "name": "Kaminek",
-    "location": "Potok",
-    "prenosnost": "prenosny"
-    },
-    "Orisek": {
-      "name": "Orisek",
-      "location": "Boruvci",
-      "prenosnost": "prenosny"
-    },
-    "Pericko": {
-      "name": "Pericko",
-      "location": "USkali",
-      "prenosnost": "prenosny"
-    }
-  },
-  "characters": {
-    "HlavniHrabos": {
-      "name": "HlavniHrabos",
-      "location": "Doupe"
-    },
-    "Hrabosice": {
-      "name": "Hrabosice",
-      "location": "Louka"
-    },
-    "StaryHrabos": {
-      "name": "StaryHrabos",
-      "location": "Doupe"
-    }
-  },
-  "hrac": {
-    "mapId": "Doupe"
-  }
-}
+{  "locations": {    "USkali": {      "name": "USkali",      "location": "Potok",      "description": "Stojíš u Skály. Tady budeš hledat modré peříčko.",      "vychody": {        "east": null,        "north": null,        "south": null,        "west": "OkrajLesa"      },      "predmet": "Pericko",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Tunel": {      "name": "Tunel",      "description": "Nacházíš se v tunelu, už jsi skoro doma!!!",      "location": "",      "vychody": {      "west": null,      "east": null,      "north": "Doupe",      "south": "Domov"      },      "predmet": "",      "postavy":null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Potok": {      "name": "Potok",      "description": "Nacházíš se u potoka. Tady budeš hledat lesklý kamínek.",      "location": "Doupe",      "vychody": {      "west": "Louka",      "east": null,      "north": null,      "south": null      },      "predmet": "Kaminek",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "OkrajLesa": {      "name": "OkrajLesa",      "description": "Jsi na okraji lesa.",      "location": "",      "vychody": {      "west": "Doupe",      "east": "USkali",      "north": "Boruvci",      "south": "Louka"      },      "predmet": "",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Doupe": {      "name": "Doupe",      "location": "Domov",      "description": "Jsi v doupěti, tady jsou všichni hraboši až na paní Hrabošovou.",      "vychody": {        "west": null,        "east": "OkrajLesa",        "north": null,        "south": "Tunel"      },      "predmet":"",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Domov": {      "name": "Domov",      "location": "",      "description": "Už jsi doma!!!",      "vychody": {        "west": null,        "east": null,        "north": "Doupe",        "south": null      },      "predmet": "",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Boruvci": {      "name": "Boruvci",      "location": "USkali",      "description": "Jsi v borůvčí, tady najdeš oříšek.",      "vychody": {        "west": null,        "east": null,        "north": null,        "south": "OkrajLesa"      },      "predmet": "Orisek",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    },    "Louka": {      "name": "Louka",      "location": "",      "description": "Jsi na louce, tady pracuje paní Hrabošová.",      "vychody": {        "west": null,        "east": "Potok",        "north": "OkrajLesa",        "south": null      },      "predmet": "",      "postavy": null,      "textPoNalezeni": "super ted uz se jen dostan do doupete"    }  },  "items": {    "Kaminek": {    "name": "Kaminek",    "location": "Potok",    "prenosnost": "prenosny"    },    "Orisek": {      "name": "Orisek",      "location": "Boruvci",      "prenosnost": "prenosny"    },    "Pericko": {      "name": "Pericko",      "location": "USkali",      "prenosnost": "prenosny",      "textPoNalezeni": ""    }  },  "characters": {    "HlavniHrabos": {      "name": "HlavniHrabos",      "location": "Doupe"    },    "Hrabosice": {      "name": "Hrabosice",      "location": "Louka"    },    "StaryHrabos": {      "name": "StaryHrabos",      "location": "Doupe"    }  },  "hrac": {    "mapId": "Doupe"  }}

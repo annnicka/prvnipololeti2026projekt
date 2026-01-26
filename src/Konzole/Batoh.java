@@ -14,7 +14,12 @@ public class Batoh {
         this.predmetyVBatohu = new ArrayList<>();
     }
 
-
+    public ArrayList<Predmet> predmetyVBatohu(){
+        for (int i = 0; i < predmetyVBatohu.size(); i++) {
+            System.out.println(predmetyVBatohu.get(i));
+        }
+        return null;
+    }
     public ArrayList<Predmet> getPredmetyVBatohu() {
         return predmetyVBatohu;
     }

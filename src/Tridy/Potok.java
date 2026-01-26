@@ -2,6 +2,7 @@ package Tridy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
+import Predmety.Kaminek;
 
 public class Potok extends CommandTrid {
 
@@ -10,7 +11,8 @@ public class Potok extends CommandTrid {
     }
 
     @Override
-    public String akceVeTride(String hodnota) {
+    public String akceVeTride(String hodnota,Hrac hrac) {
+        Kaminek k  = new Kaminek();
         return "";
     }
 

@@ -10,7 +10,9 @@ public class Domov extends CommandTrid {
     }
 
     @Override
-    public String akceVeTride(String hodnota) {
+    public String akceVeTride(String hodnota,Hrac hrac) {
+        System.out.println("jee uz jsi doma");
+
         return "";
     }
 

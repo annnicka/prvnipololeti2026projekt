@@ -10,7 +10,7 @@ public class OkrajLesa extends CommandTrid{
     }
 
     @Override
-    public String akceVeTride(String hodnota) {
+    public String akceVeTride(String hodnota,Hrac hrac) {
         return "";
     }
 

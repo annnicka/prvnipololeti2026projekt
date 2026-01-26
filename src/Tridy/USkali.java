@@ -2,6 +2,7 @@ package Tridy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
+import Predmety.Pericko;
 
 public class USkali extends CommandTrid{
 
@@ -10,7 +11,8 @@ public class USkali extends CommandTrid{
     }
 
     @Override
-    public String akceVeTride(String hodnota) {
+    public String akceVeTride(String hodnota,Hrac hrac) {
+        Pericko p = new Pericko();
         return "";
     }
 

@@ -1,6 +1,8 @@
 package Konzole;
 
 
+import Postavy.HlavniHrabos;
+
 public class Hra {
 
     private Konzole konzole;
@@ -19,6 +21,8 @@ public class Hra {
      * zapina vyber commandu
      */
     public void smycka() {
+        HlavniHrabos h = new HlavniHrabos();
+        h.dialogNaZacatkuHry();
         konzole.execute();
     }
 }
