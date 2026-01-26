@@ -19,7 +19,9 @@ public class Konzole {
     private static Scanner sc = new Scanner(System.in);
     private DataHry dataHry;
 
-    public Konzole(DataHry dataHry) {
+    public Konzole(HashMap<String, Command> commandy, HashMap<String, CommandTrid> presmerovaniDoTrid, boolean jeExit, DataHry dataHry) {
+        this.commandy = commandy;
+        this.presmerovaniDoTrid = presmerovaniDoTrid;
         this.jeExit = false;
         this.dataHry = dataHry;
         inicialization();

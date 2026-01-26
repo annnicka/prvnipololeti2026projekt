@@ -5,6 +5,7 @@ import Konzole.Hrac;
 import Predmety.Predmet;
 
 public class Seber extends Command {
+    // nejdriv musim udelat inventare postav a batoh
     public Seber(DataHry dataHry, Hrac hrac) {
         super(dataHry, hrac);
     }
