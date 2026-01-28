@@ -14,6 +14,7 @@ public class Boruvci extends CommandTrid{
     public String akceVeTride(String hodnota, Hrac hrac) {
         Predmet orisek = DataHry.getSingleton().getPredmety().get(lokace.getNazevPredmetu());
         orisek.akce(hrac);
+        //ano
         return "";
     }
 
