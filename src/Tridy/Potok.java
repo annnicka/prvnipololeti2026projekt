@@ -6,8 +6,8 @@ import Predmety.Kaminek;
 
 public class Potok extends CommandTrid {
 
-    public Potok(DataHry dataHry, Hrac hrac) {
-        super(dataHry, hrac);
+    public Potok(Lokace lokace) {
+        super(lokace);
     }
 
     @Override

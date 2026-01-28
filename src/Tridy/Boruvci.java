@@ -6,8 +6,8 @@ import Predmety.Predmet;
 
 public class Boruvci extends CommandTrid{
 
-    public Boruvci(DataHry dataHry, Hrac hrac) {
-        super(dataHry, hrac);
+    public Boruvci(Lokace lokace) {
+        super(lokace);
     }
 
     @Override

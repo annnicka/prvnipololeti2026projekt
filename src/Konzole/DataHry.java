@@ -15,6 +15,14 @@ import java.util.HashMap;
  * vypisovani z jsonu
  */
 public class DataHry {
+    private static DataHry dataHry = nacteniDatHry("res/text.json");
+
+    public static DataHry getSingleton() {
+        return  dataHry;
+    }
+
+    private DataHry() {}
+
     private HashMap<String, Lokace> locations;
     private HashMap<String, Predmet>  predmety;
     private HashMap<String, Postava>  postavy;

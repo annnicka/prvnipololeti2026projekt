@@ -13,7 +13,7 @@ public class HlavniHrabos extends Postava {
     // nemuzu mu dat cilovou destinaci
 
 
-    public HlavniHrabos(ArrayList<String> hrabosPredmety) {
+    public HlavniHrabos() {
         this.hrabosPredmety = new ArrayList<>();
     }
 

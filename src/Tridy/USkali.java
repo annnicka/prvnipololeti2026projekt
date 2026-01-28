@@ -6,8 +6,8 @@ import Predmety.Pericko;
 
 public class USkali extends CommandTrid{
 
-    public USkali(DataHry dataHry, Hrac hrac) {
-        super(dataHry, hrac);
+    public USkali(Lokace lokace) {
+        super(lokace);
     }
 
     @Override

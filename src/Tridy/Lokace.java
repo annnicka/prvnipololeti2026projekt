@@ -1,5 +1,7 @@
 package Tridy;
 
+import Predmety.Predmet;
+
 import java.util.Map;
 
 public class Lokace {
@@ -10,7 +12,7 @@ public class Lokace {
     private String name;
     private String description;
     private Map<String, String> vychody;
-    private Map<String, Object> predmety;
+    private String predmet;
     private Map<String, Object> postavy;
 
     public Lokace() {
@@ -18,6 +20,10 @@ public class Lokace {
 
     public Map<String, String> getVychody() {
         return vychody;
+    }
+
+    public String getNazevPredmetu() {
+        return predmet;
     }
 
     @Override

@@ -5,11 +5,20 @@ public class Hrac {
      * misto kde se nachazi
      */
     private String mapId;
-    Batoh b;
+    private String cilovaLokace;
+    private Batoh b;
 
     public Hrac(String mapId, Batoh b) {
         this.mapId = mapId;
         this.b = b;
+    }
+
+    public void setCilovaLokace(String cilovaLokace) {
+        this.cilovaLokace = cilovaLokace;
+    }
+
+    public String getCilovaLokace() {
+        return cilovaLokace;
     }
 
     public Batoh getB() {

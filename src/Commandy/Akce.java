@@ -8,6 +8,7 @@ public class Akce extends Command {
     private Konzole konzole;
     public Akce(DataHry dataHry, Hrac hrac, Konzole konzole) {
         super(dataHry, hrac);
+        this.konzole = konzole;
     }
 //ted tadz udelam rozcestnik a budu
     @Override

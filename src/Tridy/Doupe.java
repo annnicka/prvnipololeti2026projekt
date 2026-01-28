@@ -1,6 +1,5 @@
 package Tridy;
 
-import Konzole.DataHry;
 import Konzole.Hrac;
 import Postavy.HlavniHrabos;
 
@@ -8,8 +7,9 @@ public class Doupe extends CommandTrid{
     private HlavniHrabos hlavniHrabos;
 
 
-    public Doupe(DataHry dataHry, Hrac hrac) {
-        super(dataHry, hrac);
+    public Doupe(Lokace lokace) {
+        super(lokace);
+
     }
 
     @Override

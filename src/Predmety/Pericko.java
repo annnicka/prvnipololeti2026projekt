@@ -1,5 +1,10 @@
 package Predmety;
 
+import Konzole.Hrac;
+
+import java.util.Random;
+import java.util.Scanner;
+
 public class Pericko extends Predmet {
 
     public Pericko() {
@@ -21,5 +26,10 @@ public class Pericko extends Predmet {
         System.out.println("aaa, nasel si pericko");
         System.out.println("tak a ted musime pro kaminek k potoku. napis Potok");
         konzole.akceVeTride();
+    }
+
+    @Override
+    public void akce(Hrac hrac) {
+
     }
 }

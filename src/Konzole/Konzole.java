@@ -16,14 +16,14 @@ public class Konzole {
     private boolean jeExit;
     private static Scanner sc = new Scanner(System.in);
     private DataHry dataHry;
+    private Hrac hrac;
 
-    public Konzole(HashMap<String, Command> commandy, HashMap<String, CommandTrid> presmerovaniDoTrid, boolean jeExit, DataHry dataHry) {
-        this.commandy = commandy;
-        this.presmerovaniDoTrid = presmerovaniDoTrid;
+    public Konzole(DataHry dataHry) {
         this.jeExit = false;
         this.dataHry = dataHry;
         inicialization();
         iniciaceTrid();
+        hrac = dataHry.getHrac();
     }
 
     /**
@@ -47,18 +47,25 @@ public class Konzole {
             System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi,konec,kuk,odevzdat,pomoc,vzit");
             System.out.print(">> ");
             String input = sc.nextLine();
-            String[] command = input.trim().toLowerCase().split(" ");
+            String[] command = input.trim().split(" ");
             System.out.println(Arrays.toString(command));
             if (this.commandy.containsKey(command[0])) {
                 Command com = this.getCommands().get(command[0]);
-                System.out.println(com.execute(command[1]));
+                if (command[0].equals("akce") || command[0].equals("konec")|| command[0].equals("pomoc")|| command[0].equals("kuk")) {
+                    System.out.println(com.execute(null));
+                } else {
+                    System.out.println(com.execute(command[1]));
+                }
                 this.jeExit = com.exit();
-            } else {
+            } else if(input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
+                    input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")) {
+                akceVeTride();
+            }
+            else {
                 System.out.println("Tento komand neexistuje");
             }
 
         }
-        sc.close();
     }
 
     /**
@@ -84,17 +91,21 @@ public class Konzole {
             System.out.println();
             System.out.print(">> ");
             String input = sc.nextLine();
-            String[] command = input.trim().toLowerCase().split(" ");
+            String[] command = input.trim().split(" ");
             System.out.println(Arrays.toString(command));
-            if (this.presmerovaniDoTrid.containsKey(command[0])) {
-                CommandTrid com = this.getPresmerovaniDoTrid().get(command[0]);
-                System.out.println(com.akceVeTride(command[1]));
+            if (this.presmerovaniDoTrid.containsKey(command[0]) && muzeJit(hrac.getMapId(), command[0])) {
+                CommandTrid com = this.presmerovaniDoTrid.get(command[0]);
+                System.out.println(com.akceVeTride(command[1], hrac));
                 this.jeExit = com.exit();
             } else {
                 System.out.println("Tento komand neexistuje");
             }
         }
-        sc.close();
+    }
+
+    private boolean muzeJit(String mapId, String cilovaLokace) {
+        Lokace lokace = dataHry.getLokace(mapId);
+        return lokace.getVychody().containsValue(cilovaLokace);
     }
     /**
      * uklada commandy
