@@ -8,9 +8,9 @@ public class Hrac {
     private String cilovaLokace;
     private Batoh b;
 
-    public Hrac(String mapId, Batoh b) {
+    public Hrac() {
         this.mapId = mapId;
-        this.b = b;
+        this.b = new Batoh();
     }
 
     public void setCilovaLokace(String cilovaLokace) {

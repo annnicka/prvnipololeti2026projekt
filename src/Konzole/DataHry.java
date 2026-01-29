@@ -15,17 +15,12 @@ import java.util.HashMap;
  * vypisovani z jsonu
  */
 public class DataHry {
-    private static DataHry dataHry = nacteniDatHry("res/text.json");
-
-    public static DataHry getSingleton() {
-        return  dataHry;
-    }
 
     private DataHry() {}
 
     private HashMap<String, Lokace> locations;
-    private HashMap<String, Predmet>  predmety;
-    private HashMap<String, Postava>  postavy;
+    private HashMap<String, Predmet>  items;
+    private HashMap<String, Postava>  characters;
     private Hrac hrac;
 
     /**
@@ -76,20 +71,20 @@ public class DataHry {
         this.locations = locations;
     }
 
-    public HashMap<String, Predmet> getPredmety() {
-        return predmety;
+    public HashMap<String, Predmet> getItems() {
+        return items;
     }
 
-    public void setPredmety(HashMap<String, Predmet> predmety) {
-        this.predmety = predmety;
+    public void setItems(HashMap<String, Predmet> items) {
+        this.items = items;
     }
 
-    public HashMap<String, Postava> getPostavy() {
-        return postavy;
+    public HashMap<String, Postava> getCharacters() {
+        return characters;
     }
 
-    public void setPostavy(HashMap<String, Postava> postavy) {
-        this.postavy = postavy;
+    public void setCharacters(HashMap<String, Postava> characters) {
+        this.characters = characters;
     }
 
     public void setHrac(Hrac hrac) {

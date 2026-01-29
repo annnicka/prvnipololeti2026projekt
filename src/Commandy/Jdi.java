@@ -23,15 +23,15 @@ public class Jdi extends Command {
      */
     @Override
     public String execute(String hodnota) {
-        if (dataHry.obsahujeMapu(hrac.getMapId())) {
+        //if (dataHry.obsahujeMapu(hrac.getMapId())) {
             Lokace l = dataHry.getLokace(hrac.getMapId());
             if (l.getVychody().get(hodnota) != null) {
                 hrac.setMapId(l.getVychody().get(hodnota));
                 return "nachazis se v " + l.getVychody().get(hodnota);
 
             }
-        }
-        return null;
+        //}
+        return "nic tu neni";
     }
 
 

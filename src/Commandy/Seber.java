@@ -11,7 +11,7 @@ public class Seber extends Command {
     }
     @Override
     public String execute(String hodnota) {
-        Predmet predmet = dataHry.getPredmety().get(hodnota);
+        Predmet predmet = dataHry.getItems().get(hodnota);
         hrac.getB().getPredmetyVBatohu().add(predmet);
         return "do batohu jsi pridal "+ predmet;
     }

@@ -7,8 +7,9 @@ import Konzole.Konzole;
 public class Tunel extends CommandTrid{
     private Konzole konzole;
 
-    public Tunel(Lokace lokace) {
-        super(lokace);
+    public Tunel(Lokace lokace, DataHry dataHry, Konzole konzole) {
+        super(lokace, dataHry);
+        this.konzole = konzole;
     }
 
     @Override

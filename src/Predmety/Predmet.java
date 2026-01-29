@@ -3,30 +3,30 @@ package Predmety;
 import Konzole.Hrac;
 import Konzole.Konzole;
 import Konzole.DataHry;
-
 import java.util.Random;
 
 public class Predmet {
     protected String name;
     protected String location;
     protected Prenostnost prenosnost;
-    protected Konzole konzole;
     protected String textPoNalezeni;
 
-    public void akce(Hrac hrac) {
+    public void akce(Hrac hrac, DataHry dataHry, Konzole konzole) {
         Random rd = new Random();
-        System.out.println("pokyny");
+        System.out.println("tak a ted tu najdi "+ name);
         int opakovani = rd.nextInt(0,3);
         try{
             for (int i = 0; i < opakovani; i++) {
-                Thread.sleep(500L *i);
+                Thread.sleep(1000L *i);
                 System.out.println("ajajaj nikde nic hledame dal");
             }
+            System.out.println("super nasli jsme to");
+            System.out.println(textPoNalezeni);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        hrac.getB().getPredmetyVBatohu().add(DataHry.getSingleton().getPredmety().get(name));
-        System.out.println(textPoNalezeni);
+        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
+
         hrac.setCilovaLokace(location);
         konzole.akceVeTride();
     }

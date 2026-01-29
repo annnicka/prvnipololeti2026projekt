@@ -1,6 +1,6 @@
 package Postavy;
 
-public abstract class Postava {
+public class Postava {
     protected String name;
     protected String location;
 

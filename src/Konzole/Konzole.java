@@ -57,9 +57,11 @@ public class Konzole {
                     System.out.println(com.execute(command[1]));
                 }
                 this.jeExit = com.exit();
-            } else if(input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
-                    input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")) {
-                akceVeTride();
+            } else if(presmerovaniDoTrid.containsKey(input)) {
+//                akceVeTride();
+                presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+//                input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
+//                        input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")
             }
             else {
                 System.out.println("Tento komand neexistuje");
@@ -76,22 +78,22 @@ public class Konzole {
         return this.commandy;
     }
     public void iniciaceTrid() {
-        this.presmerovaniDoTrid.put("Boruvci", new Boruvci(dataHry.getLokace("Boruvci")));
-        this.presmerovaniDoTrid.put("Domov", new Domov(dataHry.getLokace("Domov")));
-        this.presmerovaniDoTrid.put("Doupe", new Doupe(dataHry.getLokace("Doupe")));
-        this.presmerovaniDoTrid.put("Louka", new Louka(dataHry.getLokace("Louka")));
-        this.presmerovaniDoTrid.put("OkrajLesa", new OkrajLesa(dataHry.getLokace("OkrajLesa")));
-        this.presmerovaniDoTrid.put("Potok", new Potok(dataHry.getLokace("Potok")));
-        this.presmerovaniDoTrid.put("Tunel", new Tunel(dataHry.getLokace("Tunel")));
-        this.presmerovaniDoTrid.put("Skala", new USkali(dataHry.getLokace("Skala")));
+        this.presmerovaniDoTrid.put("boruvci", new Boruvci(dataHry.getLokace("Boruvci"),dataHry, this));
+        this.presmerovaniDoTrid.put("domov", new Domov(dataHry.getLokace("Domov"),dataHry));
+        this.presmerovaniDoTrid.put("doupe", new Doupe(dataHry.getLokace("Doupe"),dataHry));
+        this.presmerovaniDoTrid.put("louka", new Louka(dataHry.getLokace("Louka"),dataHry));
+        this.presmerovaniDoTrid.put("okrajlesa", new OkrajLesa(dataHry.getLokace("OkrajLesa"),dataHry));
+        this.presmerovaniDoTrid.put("potok", new Potok(dataHry.getLokace("Potok"),dataHry, this));
+        this.presmerovaniDoTrid.put("tunel", new Tunel(dataHry.getLokace("Tunel"),dataHry,this));
+        this.presmerovaniDoTrid.put("skala", new USkali(dataHry.getLokace("Skala"),dataHry, this));
 
     }
     public void akceVeTride() {
         while(!this.jeExit) {
-            System.out.println();
+            System.out.println("tak a ted se pohybujes mezi mistnostmi jakozto ukoly");
             System.out.print(">> ");
             String input = sc.nextLine();
-            String[] command = input.trim().split(" ");
+            String[] command = input.trim().toLowerCase().split(" ");
             System.out.println(Arrays.toString(command));
             if (this.presmerovaniDoTrid.containsKey(command[0]) && muzeJit(hrac.getMapId(), command[0])) {
                 CommandTrid com = this.presmerovaniDoTrid.get(command[0]);
@@ -116,5 +118,3 @@ public class Konzole {
     }
 
 }
-
-

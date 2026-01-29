@@ -10,7 +10,6 @@ public class Akce extends Command {
         super(dataHry, hrac);
         this.konzole = konzole;
     }
-//ted tadz udelam rozcestnik a budu
     @Override
     public String execute(String hodnota) {
         System.out.println("tak jako prvni se musis dostat do boruvci");

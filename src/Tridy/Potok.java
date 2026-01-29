@@ -2,17 +2,21 @@ package Tridy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
-import Predmety.Kaminek;
+import Konzole.Konzole;
+import Predmety.Predmet;
 
 public class Potok extends CommandTrid {
+    private Konzole konzole;
 
-    public Potok(Lokace lokace) {
-        super(lokace);
+    public Potok(Lokace lokace, DataHry dataHry, Konzole konzole) {
+        super(lokace, dataHry);
+        this.konzole = konzole;
     }
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        Kaminek k  = new Kaminek();
+        Predmet orisek = dataHry.getItems().get(lokace.getNazevPredmetu());
+        orisek.akce(hrac,dataHry, konzole);
         return "";
     }
 

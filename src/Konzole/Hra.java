@@ -14,6 +14,7 @@ public class Hra {
     public Hra() {
         dataHry = DataHry.nacteniDatHry("res/text.json");
         konzole = new Konzole(dataHry);
+        Hrac hrac = dataHry.getHrac();
 
     }
 
@@ -21,8 +22,11 @@ public class Hra {
      * zapina vyber commandu
      */
     public void smycka() {
-        HlavniHrabos h = new HlavniHrabos();
-        h.dialogNaZacatkuHry();
+
+        Hrac h = new Hrac();
+        Konzole k = new Konzole(dataHry);
+        HlavniHrabos h2 = new HlavniHrabos();
+        h2.dialogNaZacatkuHry();
         konzole.execute();
     }
 }

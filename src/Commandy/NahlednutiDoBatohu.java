@@ -10,7 +10,7 @@ public class NahlednutiDoBatohu extends Command{
 
     @Override
     public String execute(String hodnota) {
-        return "";
+        return String.valueOf(hrac.getB().getPredmetyVBatohu());
     }
 
     @Override

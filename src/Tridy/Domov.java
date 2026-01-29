@@ -5,8 +5,8 @@ import Konzole.Hrac;
 
 public class Domov extends CommandTrid {
 
-    public Domov(Lokace lokace) {
-        super(lokace);
+    public Domov(Lokace lokace, DataHry dataHry) {
+        super(lokace, dataHry);
     }
 
     @Override
