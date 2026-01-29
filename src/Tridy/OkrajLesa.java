@@ -5,8 +5,8 @@ import Konzole.Hrac;
 
 public class OkrajLesa extends CommandTrid{
 
-    public OkrajLesa(Lokace lokace) {
-        super(lokace);
+    public OkrajLesa(Lokace lokace, DataHry dataHry) {
+        super(lokace, dataHry);
     }
 
     @Override

@@ -5,8 +5,8 @@ import Konzole.Hrac;
 
 public class Louka extends CommandTrid{
 
-    public Louka(Lokace lokace) {
-        super(lokace);
+    public Louka(Lokace lokace, DataHry dataHry) {
+        super(lokace, dataHry);
     }
 
     @Override

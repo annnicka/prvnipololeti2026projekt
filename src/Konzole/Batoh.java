@@ -10,15 +10,12 @@ import java.util.ArrayList;
 public class Batoh {
     private ArrayList<Predmet> predmetyVBatohu;
 
-    public Batoh(ArrayList<Predmet> predmetyVBatohu) {
+    public Batoh() {
         this.predmetyVBatohu = new ArrayList<>();
     }
 
     public ArrayList<Predmet> predmetyVBatohu(){
-        for (int i = 0; i < predmetyVBatohu.size(); i++) {
-            System.out.println(predmetyVBatohu.get(i));
-        }
-        return null;
+        return predmetyVBatohu;
     }
     public ArrayList<Predmet> getPredmetyVBatohu() {
         return predmetyVBatohu;

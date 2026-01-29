@@ -57,9 +57,11 @@ public class Konzole {
                     System.out.println(com.execute(command[1]));
                 }
                 this.jeExit = com.exit();
-            } else if(input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
-                    input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")) {
-                akceVeTride();
+            } else if(presmerovaniDoTrid.containsKey(input)) {
+//                akceVeTride();
+                presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+//                input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
+//                        input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")
             }
             else {
                 System.out.println("Tento komand neexistuje");
@@ -76,14 +78,14 @@ public class Konzole {
         return this.commandy;
     }
     public void iniciaceTrid() {
-        this.presmerovaniDoTrid.put("Boruvci", new Boruvci(dataHry.getLokace("Boruvci")));
-        this.presmerovaniDoTrid.put("Domov", new Domov(dataHry.getLokace("Domov")));
-        this.presmerovaniDoTrid.put("Doupe", new Doupe(dataHry.getLokace("Doupe")));
-        this.presmerovaniDoTrid.put("Louka", new Louka(dataHry.getLokace("Louka")));
-        this.presmerovaniDoTrid.put("OkrajLesa", new OkrajLesa(dataHry.getLokace("OkrajLesa")));
-        this.presmerovaniDoTrid.put("Potok", new Potok(dataHry.getLokace("Potok")));
-        this.presmerovaniDoTrid.put("Tunel", new Tunel(dataHry.getLokace("Tunel")));
-        this.presmerovaniDoTrid.put("Skala", new USkali(dataHry.getLokace("Skala")));
+        this.presmerovaniDoTrid.put("Boruvci", new Boruvci(dataHry.getLokace("Boruvci"),dataHry));
+        this.presmerovaniDoTrid.put("Domov", new Domov(dataHry.getLokace("Domov"),dataHry));
+        this.presmerovaniDoTrid.put("Doupe", new Doupe(dataHry.getLokace("Doupe"),dataHry));
+        this.presmerovaniDoTrid.put("Louka", new Louka(dataHry.getLokace("Louka"),dataHry));
+        this.presmerovaniDoTrid.put("OkrajLesa", new OkrajLesa(dataHry.getLokace("OkrajLesa"),dataHry));
+        this.presmerovaniDoTrid.put("Potok", new Potok(dataHry.getLokace("Potok"),dataHry));
+        this.presmerovaniDoTrid.put("Tunel", new Tunel(dataHry.getLokace("Tunel"),dataHry,this));
+        this.presmerovaniDoTrid.put("Skala", new USkali(dataHry.getLokace("Skala"),dataHry));
 
     }
     public void akceVeTride() {

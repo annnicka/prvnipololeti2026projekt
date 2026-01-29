@@ -6,14 +6,14 @@ import Predmety.Predmet;
 
 public class Boruvci extends CommandTrid{
 
-    public Boruvci(Lokace lokace) {
-        super(lokace);
+    public Boruvci(Lokace lokace, DataHry dataHry) {
+        super(lokace, dataHry);
     }
 
     @Override
     public String akceVeTride(String hodnota, Hrac hrac) {
-        Predmet orisek = DataHry.getSingleton().getPredmety().get(lokace.getNazevPredmetu());
-        orisek.akce(hrac);
+        Predmet orisek = dataHry.getItems().get(lokace.getNazevPredmetu());
+        orisek.akce(hrac,dataHry);
         //ano
         return "";
     }

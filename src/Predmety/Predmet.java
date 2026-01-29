@@ -3,7 +3,6 @@ package Predmety;
 import Konzole.Hrac;
 import Konzole.Konzole;
 import Konzole.DataHry;
-
 import java.util.Random;
 
 public class Predmet {
@@ -13,7 +12,7 @@ public class Predmet {
     protected Konzole konzole;
     protected String textPoNalezeni;
 
-    public void akce(Hrac hrac) {
+    public void akce(Hrac hrac, DataHry dataHry) {
         Random rd = new Random();
         System.out.println("pokyny");
         int opakovani = rd.nextInt(0,3);
@@ -25,7 +24,7 @@ public class Predmet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        hrac.getB().getPredmetyVBatohu().add(DataHry.getSingleton().getPredmety().get(name));
+        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
         System.out.println(textPoNalezeni);
         hrac.setCilovaLokace(location);
         konzole.akceVeTride();

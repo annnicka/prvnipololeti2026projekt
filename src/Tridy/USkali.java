@@ -2,17 +2,18 @@ package Tridy;
 
 import Konzole.DataHry;
 import Konzole.Hrac;
-import Predmety.Pericko;
+import Predmety.Predmet;
 
 public class USkali extends CommandTrid{
 
-    public USkali(Lokace lokace) {
-        super(lokace);
+    public USkali(Lokace lokace, DataHry dataHry) {
+        super(lokace, dataHry);
     }
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        Pericko p = new Pericko();
+        Predmet kaminek = dataHry.getItems().get(lokace.getNazevPredmetu());
+        kaminek.akce(hrac,dataHry);
         return "";
     }
 
