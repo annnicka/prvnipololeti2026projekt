@@ -17,17 +17,18 @@ public class Predmet {
         int opakovani = rd.nextInt(0,3);
         try{
             for (int i = 0; i < opakovani; i++) {
-                Thread.sleep(1000L *i);
                 System.out.println("ajajaj nikde nic hledame dal");
+                Thread.sleep(3000L *i);
             }
             System.out.println("super nasli jsme to");
             System.out.println(textPoNalezeni);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
-
+//        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
+        hrac.getB().pridatDoBatohu(dataHry.getItems().get(name));
         hrac.setCilovaLokace(location);
-        konzole.akceVeTride();
+        System.out.println("tak a ted se psanim lokaci dostan na "+ location);
+
     }
 }

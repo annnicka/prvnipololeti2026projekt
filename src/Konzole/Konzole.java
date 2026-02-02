@@ -93,16 +93,31 @@ public class Konzole {
             System.out.println("tak a ted se pohybujes mezi mistnostmi jakozto ukoly");
             System.out.print(">> ");
             String input = sc.nextLine();
-            String[] command = input.trim().toLowerCase().split(" ");
-            System.out.println(Arrays.toString(command));
-            if (this.presmerovaniDoTrid.containsKey(command[0]) && muzeJit(hrac.getMapId(), command[0])) {
-                CommandTrid com = this.presmerovaniDoTrid.get(command[0]);
-                System.out.println(com.akceVeTride(command[1], hrac));
+            String command = input.trim().toLowerCase();
+            System.out.println(command);
+            if (this.presmerovaniDoTrid.containsKey(command) ) {
+                CommandTrid com = this.presmerovaniDoTrid.get(command);
+                System.out.println(com.akceVeTride(command, hrac));
                 this.jeExit = com.exit();
             } else {
                 System.out.println("Tento komand neexistuje");
             }
         }
+//        while(!this.jeExit) {
+//            System.out.println("tak a ted se pohybujes mezi mistnostmi jakozto ukoly");
+//            System.out.print(">> ");
+//            String input = sc.nextLine();
+//            String[] command = input.trim().toLowerCase().split(" ");
+//            System.out.println(Arrays.toString(command));
+//            if (this.presmerovaniDoTrid.containsKey(command[0]) && muzeJit(hrac.getMapId(), command[0])) {
+//                CommandTrid com = this.presmerovaniDoTrid.get(command[0]);
+//                System.out.println(com.akceVeTride(command[1], hrac));
+//                this.jeExit = com.exit();
+//            } else {
+//                System.out.println("Tento komand neexistuje");
+//            }
+//        }
+
     }
 
     private boolean muzeJit(String mapId, String cilovaLokace) {

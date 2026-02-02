@@ -5,13 +5,16 @@ import Konzole.Hrac;
 
 public class OkrajLesa extends CommandTrid{
 
+    private OkrajLesa konzole;
+
     public OkrajLesa(Lokace lokace, DataHry dataHry) {
         super(lokace, dataHry);
     }
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        return "";
+
+        return "ses na okraji lesa";
     }
 
     @Override

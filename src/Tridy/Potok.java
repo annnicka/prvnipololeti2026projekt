@@ -15,8 +15,8 @@ public class Potok extends CommandTrid {
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        Predmet orisek = dataHry.getItems().get(lokace.getNazevPredmetu());
-        orisek.akce(hrac,dataHry, konzole);
+        Predmet kaminek = dataHry.getItems().get("Kaminek");
+        kaminek.akce(hrac,dataHry, konzole);
         return "";
     }
 

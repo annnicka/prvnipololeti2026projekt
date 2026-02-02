@@ -12,7 +12,7 @@ public class Lokace {
     private String name;
     private String description;
     private Map<String, String> vychody;
-    private String predmet;
+//    private String predmet;
     private Map<String, Object> postavy;
 
     public Lokace() {
@@ -22,8 +22,8 @@ public class Lokace {
         return vychody;
     }
 
-    public String getNazevPredmetu() {
-        return predmet;
+    public String getPredmet() {
+        return name;
     }
 
     @Override

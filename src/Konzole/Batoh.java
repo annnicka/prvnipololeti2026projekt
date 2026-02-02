@@ -13,6 +13,14 @@ public class Batoh {
     public Batoh() {
         this.predmetyVBatohu = new ArrayList<>();
     }
+    public String pridatDoBatohu(Predmet predmet){
+        predmetyVBatohu.add(predmet);
+        return " pridano do batohu";
+    }
+    public String odebiraniZBatohu(Predmet predmet){
+        predmetyVBatohu.remove(predmet);
+        return " odebrano z batohu";
+    }
 
     public ArrayList<Predmet> predmetyVBatohu(){
         return predmetyVBatohu;

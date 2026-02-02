@@ -15,8 +15,8 @@ public class USkali extends CommandTrid{
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        Predmet kaminek = dataHry.getItems().get(lokace.getNazevPredmetu());
-        kaminek.akce(hrac,dataHry, konzole);
+        Predmet pericko = dataHry.getItems().get("Pericko");
+        pericko.akce(hrac,dataHry, konzole);
         return "";
     }
 
