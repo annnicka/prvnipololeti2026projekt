@@ -12,7 +12,7 @@ public class Akce extends Command {
     }
     @Override
     public String execute(String hodnota) {
-        System.out.println("tak jako prvni se musis dostat do boruvci");
+        System.out.println("tak jako prvni se musis dostat do boruvci a nasledne napsat boruvci");
         do{
             konzole.execute();
         }

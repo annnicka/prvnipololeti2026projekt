@@ -18,8 +18,8 @@ public class HlavniHrabos extends Postava {
     }
 
     public String dialogNaZacatkuHry(){
-        String ano = "dialog";
-        return ano;
+        //TODO zacatek hry
+        return "Ahoj mysaku";
     }
 
     public String dialogH2(){
@@ -27,7 +27,7 @@ public class HlavniHrabos extends Postava {
         return "ano";
     }
 
-    public String dialogH3(Konzole konzole){
+    public String dialogH3(){
         this.konzole = konzole;
         Scanner sc = new Scanner(System.in);
         System.out.println("Hlavni hrabos: jako prvni mi musis odevzdat to co si nasbiral");
@@ -39,12 +39,12 @@ public class HlavniHrabos extends Postava {
         String odpoved = sc.nextLine();
         if(odpoved.equals("ano")){
             System.out.println("no dobra tak uz utikej domu");
-            System.out.println("napis Tunel a nasledne Domov");
-            konzole.akceVeTride();
+            System.out.println("napis Domov");
+
         }
 
 
-        this.hrabosPredmety = new ArrayList<>();
+//        this.hrabosPredmety = new ArrayList<>();
         dialogH2();
         return "";
     }

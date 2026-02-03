@@ -26,7 +26,7 @@ public class Hra {
         Hrac h = new Hrac();
         Konzole k = new Konzole(dataHry);
         HlavniHrabos h2 = new HlavniHrabos();
-        h2.dialogNaZacatkuHry();
+        System.out.println(h2.dialogNaZacatkuHry());
         konzole.execute();
     }
 }

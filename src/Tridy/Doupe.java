@@ -15,7 +15,7 @@ public class Doupe extends CommandTrid{
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        HlavniHrabos h = new HlavniHrabos();
+        hlavniHrabos.dialogH3();
         return "";
     }
 

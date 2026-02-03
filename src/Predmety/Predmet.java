@@ -16,19 +16,22 @@ public class Predmet {
         System.out.println("tak a ted tu najdi "+ name);
         int opakovani = rd.nextInt(0,3);
         try{
-            for (int i = 0; i < opakovani; i++) {
+            for (int i = 0; i < opakovani; i++) {Thread.sleep(1000 *(i+1));
                 System.out.println("ajajaj nikde nic hledame dal");
-                Thread.sleep(3000L *i);
+
             }
+            Thread.sleep(1000 );
             System.out.println("super nasli jsme to");
+            Thread.sleep(1000 );
             System.out.println(textPoNalezeni);
+            Thread.sleep(1000 );
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 //        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
         hrac.getB().pridatDoBatohu(dataHry.getItems().get(name));
         hrac.setCilovaLokace(location);
-        System.out.println("tak a ted se psanim lokaci dostan na "+ location);
+
 
     }
 }
