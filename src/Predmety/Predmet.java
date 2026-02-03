@@ -13,7 +13,7 @@ public class Predmet {
 
     public void akce(Hrac hrac, DataHry dataHry, Konzole konzole) {
         Random rd = new Random();
-        System.out.println("tak a ted tu najdi "+ name);
+        System.out.println("tak a ted tu najdeme "+ name);
         int opakovani = rd.nextInt(0,3);
         try{
             for (int i = 0; i < opakovani; i++) {Thread.sleep(1000 *(i+1));

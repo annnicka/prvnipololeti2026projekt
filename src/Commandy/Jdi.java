@@ -30,7 +30,6 @@ public class Jdi extends Command {
                 return "nachazis se v " + l.getVychody().get(hodnota);
 
             }
-        //}
         return "nic tu neni";
     }
 

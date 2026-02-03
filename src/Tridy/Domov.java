@@ -11,7 +11,9 @@ public class Domov extends CommandTrid {
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        System.out.println("jee uz jsi doma");
+        if(hrac.getB().predmetyVBatohu().equals("Kaminek")){
+            System.out.println("ale ne doma jeste nejsi asi uz blouznis");
+        }
 
         return "";
     }

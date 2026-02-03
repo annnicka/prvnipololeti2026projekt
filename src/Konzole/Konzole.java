@@ -97,8 +97,16 @@ public class Konzole {
             System.out.println(command);
             if (this.presmerovaniDoTrid.containsKey(command) ) {
                 CommandTrid com = this.presmerovaniDoTrid.get(command);
-                System.out.println(com.akceVeTride(command, hrac));
-                this.jeExit = com.exit();
+//                if(command.equals("domov")&&command.equals("tunel")){
+//                    if(hrac.getB().predmetyVBatohu().equals("Kaminek")){
+//                        System.out.println(com.akceVeTride(command, hrac));
+//                        this.jeExit = com.exit();
+//                    }
+//                }else if(!command.equals("domov")&&command.equals("tunel")){
+                    System.out.println(com.akceVeTride(command, hrac));
+                    this.jeExit = com.exit();
+
+
             } else {
                 System.out.println("Tento komand neexistuje");
             }

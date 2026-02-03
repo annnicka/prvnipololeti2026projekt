@@ -14,9 +14,9 @@ public class Tunel extends CommandTrid{
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        System.out.println("jses v tunelu a ted uz se dostan jen domu");
-        konzole.akceVeTride();
-
+        if(hrac.getB().predmetyVBatohu().equals("Kaminek")){
+            System.out.println("ale ne v tunelu jeste nejsi asi uz blouznis");
+        }
         return "";
     }
 
