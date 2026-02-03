@@ -13,9 +13,18 @@ public class Odevzdej extends Command {
     }
     @Override
     public String execute(String hodnota) {
+        //TODO pridat jestli ma v batohu kaminek a jestli ano tak zacne konecny dialog
+        if(hrac.getB().getPredmetyVBatohu().get()){
+
+        }else if(hrac.getB().getPredmetyVBatohu().isEmpty()){
+            return "batoh je prazdny";
+        }else if(!hrac.getB().getPredmetyVBatohu().isEmpty()){
         Predmet predmet = dataHry.getItems().get(hodnota);
         hrac.getB().getPredmetyVBatohu().remove(predmet);
         return "odevzdal jsi "+predmet;
+
+        }
+
     }
 
     @Override

@@ -29,8 +29,10 @@ public class Jdi extends Command {
                 hrac.setMapId(l.getVychody().get(hodnota));
                 return "nachazis se v " + l.getVychody().get(hodnota);
 
+            }else{
+                return "nic tu neni";
             }
-        return "nic tu neni";
+
     }
 
 

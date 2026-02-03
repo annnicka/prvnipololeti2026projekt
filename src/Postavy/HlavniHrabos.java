@@ -13,7 +13,9 @@ public class HlavniHrabos extends Postava {
     // nemuzu mu dat cilovou destinaci
 
 
-    public HlavniHrabos() {
+    public HlavniHrabos(Hrac hrac, Konzole konzole) {
+        this.hrac = hrac;
+        this.konzole = konzole;
         this.hrabosPredmety = new ArrayList<>();
     }
 
@@ -28,7 +30,6 @@ public class HlavniHrabos extends Postava {
     }
 
     public String dialogH3(){
-        this.konzole = konzole;
         Scanner sc = new Scanner(System.in);
         System.out.println("Hlavni hrabos: jako prvni mi musis odevzdat to co si nasbiral");
         do{
