@@ -51,7 +51,7 @@ public class Konzole {
             System.out.println(Arrays.toString(command));
             if (this.commandy.containsKey(command[0])) {
                 Command com = this.getCommands().get(command[0]);
-                if (command[0].equals("akce") || command[0].equals("konec")|| command[0].equals("pomoc")|| command[0].equals("kuk")) {
+                if (!command[0].equals("jdi")) {
                     System.out.println(com.execute(null));
                 } else {
                     System.out.println(com.execute(command[1]));

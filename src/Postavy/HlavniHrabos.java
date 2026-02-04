@@ -30,19 +30,7 @@ public class HlavniHrabos extends Postava {
     }
 
     public String dialogH3(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Hlavni hrabos: jako prvni mi musis odevzdat to co si nasbiral");
-        do{
-            konzole.execute();
-        }
-        while (!hrac.getB().predmetyVBatohu().isEmpty());
-        System.out.println("tak a ted jen posledni otazka. Pomuzes nam az budeme v nozi? ano/ne");
-        String odpoved = sc.nextLine();
-        if(odpoved.equals("ano")){
-            System.out.println("no dobra tak uz utikej domu");
-            System.out.println("napis Domov");
 
-        }
 
 
 //        this.hrabosPredmety = new ArrayList<>();

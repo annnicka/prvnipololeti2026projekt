@@ -17,11 +17,20 @@ public class Batoh {
         predmetyVBatohu.add(predmet);
         return " pridano do batohu";
     }
-    public String odebiraniZBatohu(Predmet predmet){
-        predmetyVBatohu.remove(predmet);
+    public String odebiraniZBatohu(){
+        predmetyVBatohu.clear();
         return " odebrano z batohu";
     }
-
+    
+    public boolean jeVBatohu(String nazevPredmetu){
+        for (Predmet p : predmetyVBatohu) {
+            if(p.getName().equals(nazevPredmetu)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public ArrayList<Predmet> predmetyVBatohu(){
         return predmetyVBatohu;
     }

@@ -8,8 +8,13 @@ import java.util.Random;
 public class Predmet {
     protected String name;
     protected String location;
+    protected String locationtogoto;
     protected Prenostnost prenosnost;
     protected String textPoNalezeni;
+
+    public String getName() {
+        return name;
+    }
 
     public void akce(Hrac hrac, DataHry dataHry, Konzole konzole) {
         Random rd = new Random();
@@ -30,7 +35,8 @@ public class Predmet {
         }
 //        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
         hrac.getB().pridatDoBatohu(dataHry.getItems().get(name));
-        hrac.setCilovaLokace(location);
+        hrac.setCilovaLokace(locationtogoto);
+        hrac.setMapId(location);
 
 
     }
