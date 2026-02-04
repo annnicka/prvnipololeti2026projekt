@@ -44,31 +44,74 @@ public class Konzole {
      */
     public void execute() {
         while(!this.jeExit) {
-            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi,konec,kuk,odevzdat,pomoc,vzit");
-            System.out.print(">> ");
-            String input = sc.nextLine();
-            String[] command = input.trim().split(" ");
-            System.out.println(Arrays.toString(command));
-            if (this.commandy.containsKey(command[0])) {
-                Command com = this.getCommands().get(command[0]);
-                if (!command[0].equals("jdi")) {
-                    System.out.println(com.execute(null));
-                } else {
-                    System.out.println(com.execute(command[1]));
-                }
-                this.jeExit = com.exit();
-            } else if(presmerovaniDoTrid.containsKey(input)) {
+//            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
+//            System.out.print(">> ");
+//            String input = sc.nextLine();
+//            if (input.trim().isEmpty()) continue;
+//
+//            String[] command = input.trim().split(" ");
+//            String commandKey = command[0].toLowerCase();
+//            String inputKey = input.trim().toLowerCase();
+//            while(!this.jeExit) {
+        System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
+        System.out.print(">> ");
+        String input = sc.nextLine();
+        String[] command = input.trim().split(" ");
+        System.out.println(Arrays.toString(command));
+        if(hrac.getMapId().equals(command)&&command.equals("skala") &&hrac.getB().getPredmetyVBatohu().contains("Orisek")){
+//                System.out.println(com.execute(command[1]));
+            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+        }else if(hrac.getMapId().equals(command)&&command.equals("potok") &&hrac.getB().getPredmetyVBatohu().contains("Pericko")){
+            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+        }else if (hrac.getMapId().equals(command)&&command.equals("doupe") &&hrac.getB().getPredmetyVBatohu().contains("Kaminek")){
+            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+        }
+        else if (this.commandy.containsKey(command[0])) {
+            Command com = this.getCommands().get(command[0]);
+            if (!command[0].equals("jdi")) {
+                System.out.println(com.execute(null));
+            } else {
+                System.out.println(com.execute(command[1]));
+            }
+            this.jeExit = com.exit();
+        } else if(presmerovaniDoTrid.containsKey(input)) {
 //                akceVeTride();
-                presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
+            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
 //                input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
 //                        input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")
-            }
-            else {
-                System.out.println("Tento komand neexistuje");
-            }
-
         }
+        else {
+            System.out.println("Tento komand neexistuje");
+        }
+
     }
+}
+
+            // System.out.println(Arrays.toString(command)); // Debug vypis
+
+//            if (this.commandy.containsKey(commandKey)) {
+//                Command com = this.getCommands().get(commandKey);
+//                if (commandKey.equals("jdi") && command.length > 1) {
+//                    System.out.println(com.execute(command[1]));
+//                } else {
+//                    System.out.println(com.execute(null));
+//                }
+//                this.jeExit = com.exit();
+//            } else if(presmerovaniDoTrid.containsKey(inputKey)) {
+//                if(commandKey.equals(hrac.getMapId())&&inputKey.equals("skala")&&hrac.getB().jeVBatohu("Orisek")){
+//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
+//                }else if(inputKey.equals(hrac.getMapId())&&inputKey.equals("potok")&&hrac.getB().jeVBatohu("Pericko")){
+//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
+//                }else if(inputKey.equals(hrac.getMapId())&&inputKey.equals("doupe")&&hrac.getB().jeVBatohu("Kaminek")){
+//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
+//                }
+//                ;
+//            }
+//            else {
+//                System.out.println("Tento komand neexistuje");
+//            }
+//        }
+//    }
 
     /**
      * uklada commandy

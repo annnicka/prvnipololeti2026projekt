@@ -12,10 +12,14 @@ public class Lokace {
     private String name;
     private String description;
     private Map<String, String> vychody;
-//    private String predmet;
+    private String predmet;
     private Map<String, Object> postavy;
 
     public Lokace() {
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Map<String, String> getVychody() {
@@ -23,7 +27,7 @@ public class Lokace {
     }
 
     public String getPredmet() {
-        return name;
+        return predmet;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class HlavniHrabos extends Postava {
 
     public String dialogNaZacatkuHry(){
         //TODO zacatek hry
-        return "Ahoj mysaku";
+        return "Ahoj mysaku...";
     }
 
     public String dialogH2(){

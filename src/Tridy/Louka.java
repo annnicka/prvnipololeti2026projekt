@@ -4,6 +4,7 @@ import Konzole.DataHry;
 import Konzole.Hrac;
 
 public class Louka extends CommandTrid{
+    private String name;
 
     public Louka(Lokace lokace, DataHry dataHry) {
         super(lokace, dataHry);
@@ -11,7 +12,11 @@ public class Louka extends CommandTrid{
 
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
-        return "";
+        if(name.equals(hrac.getMapId())){
+            return "jses na louce";
+        }
+        return "nejdriv se sem musis dostat";
+
     }
 
     @Override
