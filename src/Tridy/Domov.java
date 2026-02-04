@@ -15,8 +15,7 @@ public class Domov extends CommandTrid {
 //            System.out.println("ale ne doma jeste nejsi asi uz blouznis");
 //            return "";
 //        }
-        System.out.println("aaa a ses doma gratuluju!");
-        System.exit(0);
+        System.out.println("aaa a ses doma gratuluju! a ted uz jen napis konec");
         return "";
     }
 
