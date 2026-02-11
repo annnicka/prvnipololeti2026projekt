@@ -26,7 +26,7 @@ public class Doupe extends CommandTrid{
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
         String name = "Doupe";
-        if(name.equals(hrac.getMapId())&&hrac.getB().getPredmetyVBatohu().contains("Kaminek")){
+        if(name.equals(hrac.getMapId())&&hrac.getB().jeVBatohu("Orisek")){
             Scanner sc = new Scanner(System.in);
             System.out.println("tak a ted jen posledni otazka. Pomuzes nam az budeme v nozi? ano/ne");
             String odpoved = sc.nextLine();
@@ -35,7 +35,7 @@ public class Doupe extends CommandTrid{
                 System.out.println("napis Domov");
                 return "";
             }
-        }else if(name.equals(hrac.getMapId())&&!hrac.getB().getPredmetyVBatohu().contains("Kaminek")){
+        }else if(name.equals(hrac.getMapId())&&!hrac.getB().jeVBatohu("Orisek")){
             return "nemas kaminek. vrat se az ho budes mit.";
         }
         return "nejdriv se sem musis dostat";

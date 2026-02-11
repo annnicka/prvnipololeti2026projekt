@@ -23,7 +23,7 @@ public class USkali extends CommandTrid{
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
         String name = "Skala";
-        if(name.equals(hrac.getMapId())&& hrac.getB().getPredmetyVBatohu().contains("Orisek")){
+        if(name.equals(hrac.getMapId())&& hrac.getB().jeVBatohu("Orisek")){
             Predmet pericko = dataHry.getItems().get("Pericko");
             pericko.akce(hrac,dataHry, konzole);
             return "";

@@ -24,7 +24,7 @@ public class Potok extends CommandTrid {
     public String akceVeTride(String hodnota,Hrac hrac) {
 
         String name = "Potok";
-        if(name.equals(hrac.getMapId())&&hrac.getB().getPredmetyVBatohu().contains("Pericko")){
+        if(name.equals(hrac.getMapId())&&hrac.getB().jeVBatohu("Pericko")){
             Predmet kaminek = dataHry.getItems().get("Kaminek");
             kaminek.akce(hrac,dataHry, konzole);
         } else if(name.equals(hrac.getMapId())&&!hrac.getB().getPredmetyVBatohu().contains("Pericko")){

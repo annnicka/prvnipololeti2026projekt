@@ -6,3 +6,4 @@ public class Main {
         hra.smycka();
     }
 }
+//nakreslit mapu napsat zacatek domyslet jdi
