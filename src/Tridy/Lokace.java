@@ -5,9 +5,7 @@ import Predmety.Predmet;
 import java.util.Map;
 
 public class Lokace {
-    /**
-     * dodelat sem vlastnosti lokaci z jsonu
-     */
+
     private String id;
     private String name;
     private String description;
@@ -15,7 +13,13 @@ public class Lokace {
     private String predmet;
     private Map<String, Object> postavy;
 
-    public Lokace() {
+    public Lokace(String id, String name, String description, Map<String, String> vychody, String predmet, Map<String, Object> postavy) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.vychody = vychody;
+        this.predmet = predmet;
+        this.postavy = postavy;
     }
 
     public String getName() {

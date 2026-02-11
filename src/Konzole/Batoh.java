@@ -13,15 +13,35 @@ public class Batoh {
     public Batoh() {
         this.predmetyVBatohu = new ArrayList<>();
     }
+    
     public String pridatDoBatohu(Predmet predmet){
         predmetyVBatohu.add(predmet);
         return " pridano do batohu";
     }
-    public String odebiraniZBatohu(){
-        predmetyVBatohu.clear();
-        return " odebrano z batohu";
-    }
     
+//    public String odebiraniVsehoZBatohu(){
+//        predmetyVBatohu.clear();
+//        return " odebrano z batohu";
+//    }
+
+    /**
+     * Odebere predmet z batohu podle nazvu
+     */
+    public String odebiraniVsehoZBatohu(String nazev) {
+        for (int i = 0; i < predmetyVBatohu.size(); i++) {
+            if (predmetyVBatohu.get(i).getName().equals(nazev)) {
+                predmetyVBatohu.remove(i);
+                return "odebrano";
+            }
+        }
+        return "nenalezeno";
+    }
+
+    /**
+     * hleda v batohu predmet
+     * @param nazevPredmetu
+     * @return
+     */
     public boolean jeVBatohu(String nazevPredmetu){
         for (Predmet p : predmetyVBatohu) {
             if(p.getName().equals(nazevPredmetu)){
@@ -34,6 +54,7 @@ public class Batoh {
     public ArrayList<Predmet> predmetyVBatohu(){
         return predmetyVBatohu;
     }
+    
     public ArrayList<Predmet> getPredmetyVBatohu() {
         return predmetyVBatohu;
     }

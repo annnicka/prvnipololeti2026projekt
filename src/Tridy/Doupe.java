@@ -17,6 +17,12 @@ public class Doupe extends CommandTrid{
         this.konzole = konzole;
     }
 
+    /**
+     * aktivovani hledani predmetu a ohlidani jestli sem muze
+     * @param hodnota
+     * @param hrac
+     * @return
+     */
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
         String name = "Doupe";

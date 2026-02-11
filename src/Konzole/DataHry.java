@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 public class DataHry {
 
-    private DataHry() {}
+    public DataHry() {}
 
     private HashMap<String, Lokace> locations;
     private HashMap<String, Predmet>  items;

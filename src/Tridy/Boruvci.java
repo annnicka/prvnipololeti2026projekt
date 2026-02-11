@@ -14,6 +14,12 @@ public class Boruvci extends CommandTrid{
         this.konzole = konzole;
     }
 
+    /**
+     * aktivovani hledani predmetu
+     * @param hodnota
+     * @param hrac
+     * @return
+     */
     @Override
     public String akceVeTride(String hodnota, Hrac hrac) {
         String name =lokace.getName();

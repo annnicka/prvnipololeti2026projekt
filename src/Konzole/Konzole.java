@@ -33,7 +33,7 @@ public class Konzole {
         this.commandy.put("jdi", new Jdi(dataHry, dataHry.getHrac()));
         this.commandy.put("konec", new Konec(dataHry, dataHry.getHrac()));
         this.commandy.put("kuk", new NahlednutiDoBatohu(dataHry, dataHry.getHrac()));
-        this.commandy.put("odevzdat", new Odevzdej(dataHry, dataHry.getHrac()));
+        this.commandy.put("odevzdat", new Odevzdej(dataHry, dataHry.getHrac(), this));
         this.commandy.put("pomoc", new Pomoc(dataHry, dataHry.getHrac()));
         this.commandy.put("vzit", new Seber(dataHry, dataHry.getHrac()));
         this.commandy.put("akce", new Akce(dataHry, dataHry.getHrac(), this));
@@ -44,74 +44,46 @@ public class Konzole {
      */
     public void execute() {
         while(!this.jeExit) {
-//            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
-//            System.out.print(">> ");
-//            String input = sc.nextLine();
-//            if (input.trim().isEmpty()) continue;
-//
-//            String[] command = input.trim().split(" ");
-//            String commandKey = command[0].toLowerCase();
-//            String inputKey = input.trim().toLowerCase();
-//            while(!this.jeExit) {
-        System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
-        System.out.print(">> ");
-        String input = sc.nextLine();
-        String[] command = input.trim().split(" ");
-        System.out.println(Arrays.toString(command));
-        if(hrac.getMapId().equals(command)&&command.equals("skala") &&hrac.getB().getPredmetyVBatohu().contains("Orisek")){
-//                System.out.println(com.execute(command[1]));
-            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
-        }else if(hrac.getMapId().equals(command)&&command.equals("potok") &&hrac.getB().getPredmetyVBatohu().contains("Pericko")){
-            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
-        }else if (hrac.getMapId().equals(command)&&command.equals("doupe") &&hrac.getB().getPredmetyVBatohu().contains("Kaminek")){
-            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
-        }
-        else if (this.commandy.containsKey(command[0])) {
-            Command com = this.getCommands().get(command[0]);
-            if (!command[0].equals("jdi")) {
-                System.out.println(com.execute(null));
+            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
+            System.out.print(">> ");
+            String input = sc.nextLine();
+            if (input.trim().isEmpty()) continue;
+
+            String[] command = input.trim().split(" ");
+            String commandKey = command[0].toLowerCase();
+            String inputKey = input.trim().toLowerCase();
+
+            // 1. Speciální akce pro Skálu (musíš tam být, napsat "skala" a mít oříšek)
+            if (hrac.getMapId().equals("Skala") && inputKey.equals("skala") && hrac.getB().jeVBatohu("Orisek")) {
+                presmerovaniDoTrid.get("skala").akceVeTride(null, hrac);
+
+            // 2. Speciální akce pro Potok (musíš tam být, napsat "potok" a mít peříčko)
+            } else if (hrac.getMapId().equals("Potok") && inputKey.equals("potok") && hrac.getB().jeVBatohu("Pericko")) {
+                presmerovaniDoTrid.get("potok").akceVeTride(null, hrac);
+
+            // 3. Speciální akce pro Doupě (musíš tam být, napsat "doupe" a mít kamínek)
+            } else if (hrac.getMapId().equals("Doupe") && inputKey.equals("doupe") && hrac.getB().jeVBatohu("Kaminek")) {
+                presmerovaniDoTrid.get("doupe").akceVeTride(null, hrac);
+
+            // 4. Ostatní běžné příkazy (jdi, seber, batoh...)
+            } else if (this.commandy.containsKey(commandKey)) {
+                Command com = this.commandy.get(commandKey);
+                if (commandKey.equals("jdi") && command.length > 1) {
+                    System.out.println(com.execute(command[1])); // Příkaz s parametrem (např. "jdi sever")
+                } else {
+                    System.out.println(com.execute(null));       // Příkaz bez parametru (např. "batoh")
+                }
+                this.jeExit = com.exit();
+
+            // 5. Pokud to není příkaz, zkusíme, jestli to není název lokace pro přesměrování
+            } else if (presmerovaniDoTrid.containsKey(inputKey)) {
+                 presmerovaniDoTrid.get(inputKey).akceVeTride(null, hrac);
+
             } else {
-                System.out.println(com.execute(command[1]));
+                System.out.println("Tento prikaz neexistuje");
             }
-            this.jeExit = com.exit();
-        } else if(presmerovaniDoTrid.containsKey(input)) {
-//                akceVeTride();
-            presmerovaniDoTrid.get(input).akceVeTride(null,hrac);
-//                input.equals("Boruvci")|| input.equals("Domov")|| input.equals("Doupe")||
-//                        input.equals("Louka")|| input.equals("OkrajLesa")|| input.equals("Potok")|| input.equals("Tunel")|| input.equals("Skala")
         }
-        else {
-            System.out.println("Tento komand neexistuje");
-        }
-
     }
-}
-
-            // System.out.println(Arrays.toString(command)); // Debug vypis
-
-//            if (this.commandy.containsKey(commandKey)) {
-//                Command com = this.getCommands().get(commandKey);
-//                if (commandKey.equals("jdi") && command.length > 1) {
-//                    System.out.println(com.execute(command[1]));
-//                } else {
-//                    System.out.println(com.execute(null));
-//                }
-//                this.jeExit = com.exit();
-//            } else if(presmerovaniDoTrid.containsKey(inputKey)) {
-//                if(commandKey.equals(hrac.getMapId())&&inputKey.equals("skala")&&hrac.getB().jeVBatohu("Orisek")){
-//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
-//                }else if(inputKey.equals(hrac.getMapId())&&inputKey.equals("potok")&&hrac.getB().jeVBatohu("Pericko")){
-//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
-//                }else if(inputKey.equals(hrac.getMapId())&&inputKey.equals("doupe")&&hrac.getB().jeVBatohu("Kaminek")){
-//                    presmerovaniDoTrid.get(inputKey).akceVeTride(null,hrac);
-//                }
-//                ;
-//            }
-//            else {
-//                System.out.println("Tento komand neexistuje");
-//            }
-//        }
-//    }
 
     /**
      * uklada commandy
@@ -131,6 +103,10 @@ public class Konzole {
         this.presmerovaniDoTrid.put("skala", new USkali(dataHry.getLokace("Skala"),dataHry, this));
 
     }
+    /**
+     * uklada commandy a vyvolava je
+     * @return
+     */
     public void akceVeTride() {
         while(!this.jeExit) {
             System.out.println("tak a ted se pohybujes mezi mistnostmi jakozto ukoly");
@@ -171,6 +147,12 @@ public class Konzole {
 
     }
 
+    /**
+     * overuje existenci lokace
+     * @param mapId
+     * @param cilovaLokace
+     * @return
+     */
     private boolean muzeJit(String mapId, String cilovaLokace) {
         Lokace lokace = dataHry.getLokace(mapId);
         return lokace.getVychody().containsValue(cilovaLokace);

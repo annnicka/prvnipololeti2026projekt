@@ -11,6 +11,12 @@ public class OkrajLesa extends CommandTrid{
         super(lokace, dataHry);
     }
 
+    /**
+     * presmerovani
+     * @param hodnota
+     * @param hrac
+     * @return
+     */
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
         if(name.equals(hrac.getMapId())){

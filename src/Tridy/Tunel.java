@@ -13,6 +13,12 @@ public class Tunel extends CommandTrid{
         this.konzole = konzole;
     }
 
+    /**
+     * presmerovani
+     * @param hodnota
+     * @param hrac
+     * @return
+     */
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
 

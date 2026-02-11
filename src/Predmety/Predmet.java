@@ -16,6 +16,16 @@ public class Predmet {
         return name;
     }
 
+    public Predmet(String name) {
+        this.name = name;
+    }
+
+    /**
+     * hledani a ukladani premetu
+     * @param hrac
+     * @param dataHry
+     * @param konzole
+     */
     public void akce(Hrac hrac, DataHry dataHry, Konzole konzole) {
         Random rd = new Random();
         System.out.println("tak a ted tu najdeme "+ name);

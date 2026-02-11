@@ -9,6 +9,12 @@ public class Domov extends CommandTrid {
         super(lokace, dataHry);
     }
 
+    /**
+     *
+     * @param hodnota
+     * @param hrac
+     * @return
+     */
     @Override
     public String akceVeTride(String hodnota,Hrac hrac) {
 //        if(hrac.getB().predmetyVBatohu().equals("Kaminek")){
@@ -19,7 +25,7 @@ public class Domov extends CommandTrid {
             System.out.println("aaa a ses doma gratuluju! a ted uz jen napis konec");
             return "";
         }
-       return "nejdriv se sem musis dostat";
+       return " ";
     }
 
     @Override

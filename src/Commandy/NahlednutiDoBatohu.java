@@ -8,6 +8,11 @@ public class NahlednutiDoBatohu extends Command{
         super(dataHry, hrac);
     }
 
+    /**
+     * nahledne do batohu
+     * @param hodnota
+     * @return
+     */
     @Override
     public String execute(String hodnota) {
         return String.valueOf(hrac.getB().getPredmetyVBatohu());
