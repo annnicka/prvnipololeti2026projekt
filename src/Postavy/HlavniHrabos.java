@@ -21,7 +21,8 @@ public class HlavniHrabos extends Postava {
 
     public String dialogNaZacatkuHry(){
         //TODO zacatek hry
-        return "Ahoj mysaku...";
+        return "Ahoj mysaku. Potrebujes se dostat domu. Ale bohuzel prostredek lesa zabiraji obri." +
+                "Ale nastesti maji hrabosi tunel pres cely les jen by jsi musel nazbirat par veci pro hrabosovu rodinu. ";
     }
 
     public String dialogH2(){
