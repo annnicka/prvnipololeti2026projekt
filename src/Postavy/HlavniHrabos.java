@@ -10,7 +10,6 @@ public class HlavniHrabos extends Postava {
     private ArrayList<String> hrabosPredmety;
     private Konzole konzole;
     private Hrac hrac;
-    // nemuzu mu dat cilovou destinaci
 
 
     public HlavniHrabos(Hrac hrac, Konzole konzole) {
@@ -23,20 +22,6 @@ public class HlavniHrabos extends Postava {
         //TODO zacatek hry
         return "Ahoj mysaku. Potrebujes se dostat domu. Ale bohuzel prostredek lesa zabiraji obri." +
                 "Ale nastesti maji hrabosi tunel pres cely les jen by jsi musel nazbirat par veci pro hrabosovu rodinu. ";
-    }
-
-    public String dialogH2(){
-        System.out.println();
-        return "ano";
-    }
-
-    public String dialogH3(){
-
-
-
-//        this.hrabosPredmety = new ArrayList<>();
-        dialogH2();
-        return "";
     }
 
 

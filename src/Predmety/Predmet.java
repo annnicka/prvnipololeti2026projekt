@@ -43,7 +43,6 @@ public class Predmet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-//        hrac.getB().getPredmetyVBatohu().add(dataHry.getItems().get(name));
         hrac.getB().pridatDoBatohu(dataHry.getItems().get(name));
         hrac.setCilovaLokace(locationtogoto);
         hrac.setMapId(location);

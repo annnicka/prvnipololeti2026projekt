@@ -18,11 +18,7 @@ public class Batoh {
         predmetyVBatohu.add(predmet);
         return " pridano do batohu";
     }
-    
-//    public String odebiraniVsehoZBatohu(){
-//        predmetyVBatohu.clear();
-//        return " odebrano z batohu";
-//    }
+
 
     /**
      * Odebere predmet z batohu podle nazvu
