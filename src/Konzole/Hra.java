@@ -12,7 +12,7 @@ public class Hra {
      * prubeh hry
      */
     public Hra() {
-        dataHry = DataHry.nacteniDatHry("res/text.json");
+        dataHry = DataHry.nacteniDatHry("\\text.json");
         konzole = new Konzole(dataHry);
     }
 

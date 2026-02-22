@@ -3,7 +3,6 @@ package Konzole;
 import Commandy.*;
 import Tridy.*;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -44,8 +43,19 @@ public class Konzole {
      */
     public void execute() {
         while(!this.jeExit) {
-            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit");
+            System.out.println("tak a ted muzes napsat jen slovo a stane se: jdi +(svetova strana),konec,kuk(nakouknuti do batohu),odevzdat,pomoc,vzit, akce(zapne se hra)");
             System.out.print(">> ");
+            System.out.println("                  [Borůvčí]\n" +
+                    "                          |  " +
+                    "                          |\n" +
+                    "[Doupě] -------- [Okraj lesa] -------- [Skála]\n" +
+                    " (Start)                  |                               " +
+                    "    |                     |\n" +
+                    "[Tunel]          [Louka]      -------- [Potok]\n" +
+                    "(Cesta ven)                                              " +
+                    "    |\n" +
+                    "[Město]\n" +
+                    "  (Cíl)");
             String input = sc.nextLine();
             if (input.trim().isEmpty()) continue;
 
@@ -100,7 +110,7 @@ public class Konzole {
         this.presmerovaniDoTrid.put("okrajlesa", new OkrajLesa(dataHry.getLokace("OkrajLesa"),dataHry));
         this.presmerovaniDoTrid.put("potok", new Potok(dataHry.getLokace("Potok"),dataHry, this));
         this.presmerovaniDoTrid.put("tunel", new Tunel(dataHry.getLokace("Tunel"),dataHry,this));
-        this.presmerovaniDoTrid.put("skala", new USkali(dataHry.getLokace("Skala"),dataHry, this));
+        this.presmerovaniDoTrid.put("skala", new Skala(dataHry.getLokace("Skala"),dataHry, this));
 
     }
     /**

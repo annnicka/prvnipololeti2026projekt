@@ -7,7 +7,10 @@ import com.google.gson.Gson;
 
 import javax.xml.crypto.Data;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,10 +32,14 @@ public class DataHry {
      * @return
      */
     public static DataHry nacteniDatHry(String cestaKSouboru) {
-        try (Reader reader = new FileReader(cestaKSouboru)){
+        InputStream input = DataHry.class.getResourceAsStream("/text.json");
+        if(input == null){
+            throw new RuntimeException();
+        }
+        try (input){
             Gson gson = new Gson();
             return gson.fromJson(
-                    reader,
+                    new InputStreamReader(input, StandardCharsets.UTF_8),
                     DataHry.class
             );
         } catch (Exception e) {

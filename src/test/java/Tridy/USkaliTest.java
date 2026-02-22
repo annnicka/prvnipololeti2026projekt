@@ -32,7 +32,7 @@ class USkaliTest {
         items.put("Pericko", pericko);
         data.setItems(items);
 
-        USkali uskali = new USkali(null, data, null);
+        Skala uskali = new Skala(null, data, null);
 
         String vysledek = uskali.akceVeTride("", hrac);
 

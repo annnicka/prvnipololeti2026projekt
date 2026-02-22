@@ -5,11 +5,11 @@ import Konzole.Hrac;
 import Konzole.Konzole;
 import Predmety.Predmet;
 
-public class USkali extends CommandTrid{
+public class Skala extends CommandTrid{
     private Konzole konzole;
     private String name;
 
-    public USkali(Lokace lokace, DataHry dataHry, Konzole konzole) {
+    public Skala(Lokace lokace, DataHry dataHry, Konzole konzole) {
         super(lokace, dataHry);
         this.konzole = konzole;
     }
